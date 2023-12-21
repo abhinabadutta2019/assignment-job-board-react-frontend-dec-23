@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Job Board Web Application
 
-This Project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Job Board Web Application is a platform that connects job creators and applicants, providing a seamless and efficient way for users to post and apply for job positions.
 
-In the project directory, you can run:
+## Backend
 
-### `npm start`
+### Routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Job Routes**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - `POST /api/jobs`: Create a job listing (for job creators only).
+  - `GET /api/jobs/appliedUsers/:jobId`: Get details of applicants for a specific job (for job creators only).
+  - `GET /api/jobs/yourCreatedJobs/:jobId`: Get job details created by the current user (for job creators only).
+  - `GET /api/jobs`: Get all job listings.
+  - `POST /api/jobs/apply/:jobId`: Apply for a job (for applicants only).
+  - `GET /api/jobs/appliedJobs`: Get a list of jobs applied to by the current user.
 
-### `npm test`
+- **User Routes**
+  - `POST /api/users`: Register a new user.
+  - `POST /api/users/login`: User login.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend Technologies
 
-### `npm run build`
+- **Node.js:** Server-side runtime environment.
+- **Express.js:** Web application framework simplifying routing and middleware.
+- **MongoDB:** NoSQL database to store user data, job listings, and applications.
+- **Mongoose:** ODM library for MongoDB, providing an elegant interface for database interactions.
+- **JWT (JSON Web Tokens):** Used for user authentication and authorization.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **App.js:** Main component managing routing using React Router.
+- **Auth.js:** Component handling user registration and login.
+- **CreateJob.js:** Component for job creation (accessible to job creators only).
+- **YourCreatedJobs.js:** Component to display jobs created by the current user (for job creators only).
+- **ApplicantsDetails.js:** Component to view details of applicants for a specific job (for job creators only).
+- **YourAppliedJobs.js:** Component to display jobs applied to by the current user (for applicants only).
+- **Navbar.js:** Navigation bar component.
 
-### `npm run eject`
+### Frontend Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React:** JavaScript library for building user interfaces.
+- **React Router:** Used for client-side routing.
+- **React Bootstrap:** Library for responsive and visually appealing UI components.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Security
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- User data and passwords are securely stored in the database.
+- JSON Web Tokens (JWT) are used for user authentication and authorization.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Responsive Design
 
-## Learn More
+- The application is designed to be responsive, ensuring a consistent user experience across different devices and screen sizes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Links
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Deployed Frontend Link:** [Job Board Frontend](https://assignment-job-board-react-frontend.onrender.com)
+- **Frontend Repository Link:** [GitHub Repository - Frontend](https://github.com/abhinabadutta2019/assignment-job-board-react-frontend-07-nov-23)
+- **Backend Repository Link:** [GitHub Repository - Backend](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-07-nov-23)
 
-### Code Splitting
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Login page
 
-### Analyzing the Bundle Size
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/42aa8edb-2a7f-481d-b42d-4ad123e9b550)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Registration page
 
-### Making a Progressive Web App
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/bc9bbaa7-79eb-42f5-926b-7ad0300a37b1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Home page (For job poster)
 
-### Advanced Configuration
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/e0ba4246-5f1f-46ea-b4b9-5e67bb87e6b3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Home page (For applicants)
 
-### Deployment
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/0497fa69-210f-47ed-b472-489bf1ddb806)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Yourapplied-jobs page (For Applicants)
 
-### `npm run build` fails to minify
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/b1fb3d93-141f-4ed0-a19f-6b5438fdd7de)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Your-Created-Jobs page (For job poster)
+
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/731886b1-b2e1-47fa-9956-21cc68fac74d)
+
+### Applicants-details page (For job poster)
+
+![image](https://github.com/abhinabadutta2019/assignment-job-board-typescript-backend-dec-23/assets/118996650/f0e54558-43ab-45ee-aef9-099c55bda14d)
+
+## Conclusion
+
+The Job Board Web Application provides an effective platform for job creators and applicants to connect, facilitating the job posting and application process.
