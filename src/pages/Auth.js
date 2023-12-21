@@ -37,7 +37,7 @@ const Auth = () => {
       window.alert("An error occurred. Please try again.");
     }
   };
-
+  //
   const toggleForm = () => {
     setIsLoginForm((prevIsLoginForm) => !prevIsLoginForm);
   };
