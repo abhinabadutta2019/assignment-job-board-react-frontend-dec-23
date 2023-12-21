@@ -84,7 +84,7 @@ const Auth = () => {
 
   return (
     <Container>
-      <h1 className="mt-4">WorkWave Auth</h1>
+      <h1 className="mt-4">WorkPro Auth</h1>
       <Row>
         <Col md={4} className="mt-4">
           <Button onClick={toggleForm} variant="primary">
