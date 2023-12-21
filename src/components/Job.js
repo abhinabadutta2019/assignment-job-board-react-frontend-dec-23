@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 //
 import { Button, Card } from "react-bootstrap";
+import moment from "moment";
 //
 const Job = ({ job }) => {
   const { user, url, fetchJobs } = useContext(AuthContext);
@@ -53,7 +54,12 @@ const Job = ({ job }) => {
         <Card.Title>{job.title}</Card.Title>
         <Card.Text>Posted by email: {job.createdBy.email}</Card.Text>
         <Card.Text>Description: {job.description}</Card.Text>
-        <Card.Text>Posted on: {job.createdAt}</Card.Text>
+        {/* <Card.Text>Posted on: {job.createdAt}</Card.Text>
+         */}
+        <Card.Text>
+          Posted on: {moment(job.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
+        </Card.Text>
+
         <Card.Text>Total applicants: {job.appliedBy.length}</Card.Text>
 
         {user.userType === "applicant" && ( // Conditionally render the Apply button
